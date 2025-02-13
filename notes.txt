@@ -1,0 +1,24 @@
+Four main parameters: 
+
+- K = number of filters
+- F = spatial extent (color channels, dimensions, etc)
+- P = padding
+- S = stride
+
+Some typical combinations of (F, S, P):
+- (3, 1, 1), (5, 1, 2), (5, 2, ?)
+
+Formula for post-filtered dimension: 
+N_out = (N_in - f + 2*p)/s + 1
+Where f = filter dimension (assumed f x f)
+
+Different pooling types: 
+- max pooling
+    - select largest values pr. filter size
+- mean pooling 
+    - select mean values pr. filter size
+
+
+Convolution, mathmatical interpertation: 
+A teoplitz matrix A (filter weights) multiplied with input X equals output Y
+y(i) = sum(w(k) * x(i-k)) for k = 0 : k = m-1
